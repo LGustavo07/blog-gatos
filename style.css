@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --hue: 30;
+    --white-color: hsl(var(--hue), 100%, 98%);
+    --primary-color: hsl(var(--hue), 46%, 40%);
+    --secondary-color: hsl(var(--hue), 95%, 25%);
+    --dark: hsl(240, 5%, 7%);
+}
+
+ul {
+    list-style: none;
+}
+
+.app {
+    display: grid;
+    grid-template:
+        "header header"
+        "main main"
+        "aside aside"
+        "footer footer";
+}
+
+body {
+    color: var(--dark);
+    font-size: 1.6rem;
+
+    font-family: "Mulish", sans-serif;
+    height: 100vh;
+    width: 100vw;
+}
+
+header {
+    grid-area: header;
+    background-color: var(--secondary-color);
+    padding: 1.2rem 2.8rem;
+}
+
+header .content {
+    display: flex;
+    align-items: center;
+
+    gap: 2.5rem;
+}
+
+header .menu {
+    background-color: var(--white-color);
+    border-radius: 50%;
+    padding: 0.8rem;
+}
+
+header .menu img {
+    border-radius: 50%;
+}
+header form {
+    flex: 1;
+    font-family: "Mulish", sans-serif;
+}
+
+header form label {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+header form input {
+    background-color: var(--primary-color);
+
+    border: 0;
+    border-radius: 0.4rem;
+
+    padding: 1.2rem 1.6rem 1.2rem 1.4rem;
+
+    margin: 0 auto;
+
+    width: 100%;
+
+    font-family: "Mulish", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+header form input:focus {
+    outline: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+header form input::placeholder {
+    color: var(--white-color);
+}
+
+main {
+    grid-area: main;
+}
+
+main .post-principal {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.container {
+    padding: 0 2.4rem;
+}
+
+.title-section h1,
+h2 {
+    font-size: 2.4rem;
+    font-weight: 3.8rem;
+    font-weight: 700;
+
+    margin-top: 3.4rem;
+    margin-bottom: 1rem;
+}
+
+.likes a {
+    background-color: var(--secondary-color);
+    padding: 1.2rem;
+
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.text {
+    font-family: "Mulish", sans-serif;
+
+    margin-top: 3.2rem;
+
+    font-size: 1.6rem;
+    font-weight: 2.5rem;
+}
+.likes a:hover {
+    background-color: var(--primary-color);
+}
+.likes a svg {
+    width: 1.7rem;
+}
+
+aside {
+    grid-area: aside;
+}
+aside h2 {
+    margin: 3.4rem 0;
+}
+
+aside .articles a {
+    color: var(--dark);
+    text-decoration: none;
+    display: flex;
+}
+aside .articles img {
+    border-radius: 0.5rem;
+    margin-right: 1.6rem;
+    transition: all 0.1s ease;
+    width: 15rem;
+}
+aside .articles h3 {
+    grid-area: h3;
+    font-size: 1.8rem;
+}
+aside .articles p {
+    font-size: 1.4rem;
+}
+.articles li + li {
+    margin-top: 3.2rem;
+}
+
+footer {
+    grid-area: footer;
+    background-color: var(--secondary-color);
+    padding: 1.6rem;
+
+    margin-top: 4rem;
+}
+
+footer p {
+    text-align: center;
+    color: var(--white-color);
+    font-size: 1.6rem;
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+@media (min-width: 1000px) {
+    .app {
+        /* justify-content: center; */
+        grid-template:
+            "header header"
+            "main aside"
+            "footer footer";
+    }
+
+    main {
+        margin-top: 4.4rem;
+        padding-left: 10rem;
+    }
+
+    header .content {
+        margin: 0 auto;
+        max-width: 115rem;
+    }
+    .container {
+        width: 50rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    main {
+        width: 80rem;
+    }
+    .title-section {
+        justify-content: space-between;
+        display: flex;
+    }
+}
